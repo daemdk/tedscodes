@@ -1,5 +1,3 @@
-using System;
-
 public enum OrderState { New, Processing, Shipped, Delivered, Canceled }
 
 public class Order
