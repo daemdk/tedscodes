@@ -26,7 +26,6 @@ if (int.TryParse(Console.ReadLine(), out int n) && n > 0)
 
     var primeFinder = new PrimeFinder();
 
-    // single loop
     var stopwatch = Stopwatch.StartNew();
     var primes = primeFinder.FindPrimes(n);
     stopwatch.Stop();
@@ -37,8 +36,8 @@ if (int.TryParse(Console.ReadLine(), out int n) && n > 0)
         Console.Write($"{prime} ");
     }
 
+    Console.WriteLine($"Time taken: {timeTaken} ms");
     Console.WriteLine($"Prime numbers up to {n}:");
-    Console.WriteLine($"Single loop Time taken: {timeTaken} ms");
 
 }
 else
