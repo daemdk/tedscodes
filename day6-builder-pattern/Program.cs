@@ -19,10 +19,10 @@
 Console.WriteLine("Hello, Day6!");
 
 var computer = new ComputerBuilder()
-    .WithCPU("Intel Core i7")
-    .WithRAM("16GB")
-    .WithStorage("1TB SSD")
-    .WithGraphicsCard("NVIDIA RTX 3080")
+    .SetCPU("Intel Core i9")
+    .SetRAM("32GB")
+    .SetStorage("2TB NVMe SSD")
+    .SetGraphicsCard("NVIDIA RTX 3090")
     .Build();
 
 Console.WriteLine(computer);

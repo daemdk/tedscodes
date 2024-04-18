@@ -3,34 +3,37 @@
 /// </summary>
 public class ComputerBuilder
 {
-    private Computer _computer = new Computer();
+    public string? CPU { get; private set; }
+    public string? RAM { get; private set; }
+    public string? Storage { get; private set; }
+    public string? GraphicsCard { get; private set; }
 
-    public ComputerBuilder WithCPU(string cpu)
+    public ComputerBuilder SetCPU(string cpu)
     {
-        _computer.CPU = cpu;
+        CPU = cpu;
         return this;
     }
 
-    public ComputerBuilder WithRAM(string ram)
+    public ComputerBuilder SetRAM(string ram)
     {
-        _computer.RAM = ram;
+        RAM = ram;
         return this;
     }
 
-    public ComputerBuilder WithStorage(string storage)
+    public ComputerBuilder SetStorage(string storage)
     {
-        _computer.Storage = storage;
+        Storage = storage;
         return this;
     }
 
-    public ComputerBuilder WithGraphicsCard(string graphicsCard)
+    public ComputerBuilder SetGraphicsCard(string graphicsCard)
     {
-        _computer.GraphicsCard = graphicsCard;
+        GraphicsCard = graphicsCard;
         return this;
     }
 
     public Computer Build()
     {
-        return _computer;
+        return new Computer(this);
     }
 }
