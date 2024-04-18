@@ -1,5 +1,5 @@
 /// <summary>
-/// ComputerBuilder
+/// Computer
 /// </summary>
 public class Computer
 {
