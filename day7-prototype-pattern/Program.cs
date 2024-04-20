@@ -9,6 +9,17 @@
 // Deep Copy
 // Implementing deep copy in the prototype pattern is important when the object contains fields of reference types. A deep copy not only clones all fields of an object, but also recursively clones the objects pointed to by reference type fields. This ensures that there are no shared references between the original and cloned objects, so modifications to one object do not affect the other.
 
+// Deep copy and shallow copy are suitable for different situations.
+// Shallow Copy
+// - When the object does not contain any fields of a reference type, or when the fields of a reference type are immutable.
+// - When an object contains fields of a reference type and the copy must be independent of the original.
+// - When changing data of a reference type in the copy without affecting the original.
+
+// Deep Copy
+// - When you need a complete copy of an object and want to avoid the side effects of reference sharing.
+// - When an object's reference type fields can be shared and that is not a problem.
+// - When performance is important and you want to avoid the overhead of deep copying.
+
 Console.WriteLine("Hello, Day7!");
 
 //**************************
