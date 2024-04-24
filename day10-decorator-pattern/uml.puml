@@ -1,0 +1,29 @@
+@startuml
+interface IComponent {
+  +Operation(): string
+}
+
+class ConcreteComponent {
+  +Operation(): string
+}
+
+IComponent <|-- ConcreteComponent
+
+class Decorator {
+  -_component: IComponent
+  +Operation(): string
+}
+
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-- ConcreteDecoratorB
+
+class ConcreteDecoratorA {
+  +Operation(): string
+}
+
+class ConcreteDecoratorB {
+  +Operation(): string
+}
+
+IComponent <|-- Decorator
+@enduml

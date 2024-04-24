@@ -8,7 +8,7 @@
 // 3. Decorator: This implements the Component interface and holds a reference to a Component object. It adds new behavior by wrapping the original object.
 // 4. ConcreteDecorator: This extends the Decorator class and adds specific features or modifications.
 
-// For example, let’s consider a simple text messaging object that can display plain text. Now, if we want to add HTML tags, encryption, or network transmission to this message, we can create separate decorators for each feature. These decorators can be combined to enhance the original message object as needed.
+// Let’s consider a simple text messaging object that can display plain text. Now, if we want to add HTML tags, encryption, or network transmission to this message, we can create separate decorators for each feature. These decorators can be combined to enhance the original message object as needed.
 
 // The Decorator Pattern is especially useful in languages like JavaScript (which uses prototypes) and provides flexibility in design even in class-based languages like C#. It allows us to extend object functionality dynamically, particularly when we need to add or modify features at runtime.
 //
@@ -28,14 +28,18 @@
 
 Console.WriteLine("Hello, Day 10!");
 
-// basic circle object
-IShape circle = new Circle();
+// Create basic component
+IComponent component = new ConcreteComponent();
+Console.WriteLine("Basic Component: " + component.Operation());
 
-// Circle object decorated in red
-IShape redCircle = new RedShapeDecorator(new Circle());
+// Decorated with A
+IComponent decoratedComponentA = new ConcreteDecoratorA(component);
+Console.WriteLine("Decorated with A: " + decoratedComponentA.Operation());
 
-// Drawing a basic circle
-circle.Draw();
+// Decorated with B
+IComponent decoratedComponentB = new ConcreteDecoratorB(component);
+Console.WriteLine("Decorated with B: " + decoratedComponentB.Operation());
 
-// Drawing a circle decorated in red
-redCircle.Draw();
+// Decorated with A and B
+IComponent decoratedComponentAB = new ConcreteDecoratorB(decoratedComponentA);
+Console.WriteLine("Decorated with A and B: " + decoratedComponentAB.Operation());
