@@ -1,0 +1,48 @@
+@startuml
+class ICreditCard {
+  +GetCardType(): string
+  +GetCreditLimit(): double
+  +GetAnnualCharge(): double
+}
+
+class MoneyBack {
+  +GetCardType(): string
+  +GetCreditLimit(): double
+  +GetAnnualCharge(): double
+}
+
+class Titanium {
+  +GetCardType(): string
+  +GetCreditLimit(): double
+  +GetAnnualCharge(): double
+}
+
+class Platinum {
+  +GetCardType(): string
+  +GetCreditLimit(): double
+  +GetAnnualCharge(): double
+}
+
+class CreditCardFactory {
+  +CreateProduct(): ICreditCard
+}
+
+class MoneyBackFactory {
+  +CreateProduct(): ICreditCard
+}
+
+class TitaniumFactory {
+  +CreateProduct(): ICreditCard
+}
+
+class PlatinumFactory {
+  +CreateProduct(): ICreditCard
+}
+
+ICreditCard <|-- MoneyBack
+ICreditCard <|-- Titanium
+ICreditCard <|-- Platinum
+CreditCardFactory <|-- MoneyBackFactory
+CreditCardFactory <|-- TitaniumFactory
+CreditCardFactory <|-- PlatinumFactory
+@enduml
