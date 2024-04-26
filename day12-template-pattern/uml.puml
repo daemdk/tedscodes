@@ -1,0 +1,26 @@
+@startuml
+abstract class HouseTemplate {
+  +BuildHouse()
+  -BuildFoundation()
+  -BuildPillars()
+  -BuildWalls()
+  -BuildWindows()
+}
+
+class ConcreteHouse {
+  +BuildFoundation()
+  +BuildPillars()
+  +BuildWalls()
+  +BuildWindows()
+}
+
+class WoodenHouse {
+  +BuildFoundation()
+  +BuildPillars()
+  +BuildWalls()
+  +BuildWindows()
+}
+
+HouseTemplate <|-- ConcreteHouse
+HouseTemplate <|-- WoodenHouse
+@enduml
